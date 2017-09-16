@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './card.scss';
+import styles from './styles.scss';
 
 class Card extends React.PureComponent {
   render() {

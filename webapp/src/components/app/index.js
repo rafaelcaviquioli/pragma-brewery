@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../navbar';
-import Dashboard from '../dashboard';
+import Navbar from 'components/navbar';
+import Dashboard from 'components/dashboard';
 
 class App extends React.PureComponent {
   render() {

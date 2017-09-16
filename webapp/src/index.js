@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './components/app/index';
-import createStore from './create-store';
+import createStore from './state/create-store';
 
 const AppOnRedux = (
   <Provider store={createStore()}>

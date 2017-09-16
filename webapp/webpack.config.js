@@ -10,6 +10,12 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
   entry: './src/index.js',
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, './src/components/'),
+      state: path.resolve(__dirname, './src/state/')
+    }
+  },
   devtool: process.env.NODE_ENV === 'production' ? 'hidden-source-map' : 'source-map',
   output: { path: path.resolve(__dirname, 'dist'), publicPath: '/', filename: 'app.bundle.[hash].js' },
   module: {
