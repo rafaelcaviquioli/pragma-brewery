@@ -1,9 +1,10 @@
 module.exports = server => {
   server.route({
-    method: 'GET',
+    method: 'POST',
     path: '/',
-    handler: async (request, reply) => {
-      reply('working...');
+    handler: (request, reply) => {
+      server.broadcast({ type: 'BEER_CONTAINER_CREATED', payload: request.payload });
+      reply('OK');
     }
   });
 };

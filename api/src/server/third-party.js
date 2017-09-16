@@ -1,6 +1,7 @@
 const Good = require('good');
+const Nes = require('nes');
 
-const thirdPartyPlugins = [];
+const thirdPartyPlugins = [Nes];
 
 if (process.env.NODE_ENV !== 'test') {
   thirdPartyPlugins.push({

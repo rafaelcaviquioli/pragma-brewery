@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -41,6 +42,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV) }),
     new HtmlWebpackPlugin({ template: './public/index.ejs' }),
     new CopyWebpackPlugin([
       { from: 'public/favicon.png', to: 'favicon.png' },

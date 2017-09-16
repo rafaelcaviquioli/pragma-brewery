@@ -21,7 +21,7 @@ Install dependencies
 
 Up the application
 
-    $ docker-compose up webapp
+    $ docker-compose up webapp api
 
 Now the app is running on http://localhost:3000
 
