@@ -18,12 +18,17 @@ Install dependencies
 
     $ docker-compose run --rm webapp yarn install
     $ docker-compose run --rm api yarn install
+    $ docker-compose run --rm thermometer-mock yarn install
 
 Up the application
 
     $ docker-compose up webapp api
 
 Now the app is running on http://localhost:3000
+
+To emulate how it works with thermometers
+
+    $ docker-compose up webapp api thermometer-mock
 
 ## Webapp
 

@@ -1,0 +1,13 @@
+{
+  "name": "pragma-brewery-thermometer-mock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "yarn outdated || exit 0"
+  },
+  "dependencies": {
+    "node-fetch": "^1.7.3"
+  }
+}

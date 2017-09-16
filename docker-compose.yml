@@ -37,3 +37,12 @@ services:
     ports:
       - '4444:4444'
       - '5900:5900'
+  thermometer-mock:
+    build: ./thermometer-mock
+    depends_on:
+      - api
+    command: yarn run start
+    volumes:
+      - ./thermometer-mock:/home/node
+    environment:
+      - NODE_ENV=$NODE_ENV
