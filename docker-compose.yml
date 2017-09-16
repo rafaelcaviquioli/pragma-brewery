@@ -1,7 +1,21 @@
 version: '2'
 services:
+  api:
+    build: ./api
+    command: yarn run start-dev
+    volumes:
+      - ./api:/home/node
+    ports:
+      - '9000:9000'
+    environment:
+      - NODE_ENV=$NODE_ENV
+      - WEB_CONCURRENCY=$WEB_CONCURRENCY
+      - HOST=$HOST
+      - PORT=$PORT
   webapp:
     build: ./webapp
+    depends_on:
+      - api
     command: yarn start
     volumes:
       - ./webapp:/home/node

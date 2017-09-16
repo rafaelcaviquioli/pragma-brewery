@@ -1,0 +1,29 @@
+{
+  "name": "pragma-brewery-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 src/index.js",
+    "start-dev": "nodemon src/index.js",
+    "test": "jest",
+    "postinstall": "(yarn outdated || exit 0)"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**"
+    ]
+  },
+  "devDependencies": {
+    "jest": "20.0.4",
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "good": "^7.3.0",
+    "good-console": "^6.4.0",
+    "good-squeeze": "^5.0.2",
+    "hapi": "^16.6.0",
+    "nes": "^6.4.3",
+    "throng": "^4.0.0"
+  }
+}
