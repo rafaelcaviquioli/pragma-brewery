@@ -54,6 +54,12 @@ module.exports = {
     host: '0.0.0.0',
     port: '3000',
     historyApiFallback: true,
-    disableHostCheck: true
+    disableHostCheck: true,
+    proxy: {
+      '/ws': {
+        target: 'ws://api:9000',
+        ws: true,
+      }
+    }
   }
 };

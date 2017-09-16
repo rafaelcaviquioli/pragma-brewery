@@ -3,7 +3,7 @@ import createStore from './create-store';
 
 export default preloadedState => {
   const store = createStore(preloadedState);
-  const client = new Nes.Client('ws://localhost:9000');
+  const client = new Nes.Client(`ws://${window.location.host}/ws`);
 
   client.connect(() => {
     client.onUpdate = wsAction => {
