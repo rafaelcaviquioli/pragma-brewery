@@ -1,7 +1,6 @@
 import { applyMiddleware } from 'redux';
-import promiseMiddleware from 'redux-promise-middleware';
 
-const middlewares = [promiseMiddleware()];
+const middlewares = [];
 
 if (process.env.NODE_ENV === 'development') {
   const { logger } = require('redux-logger');
