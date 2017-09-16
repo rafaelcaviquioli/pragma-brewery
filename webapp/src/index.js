@@ -3,10 +3,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './components/app/index';
-import createNesStore from './state/create-nes-store';
+import createWsStore from './state/create-ws-store';
 
 const AppOnRedux = (
-  <Provider store={createNesStore()}>
+  <Provider store={createWsStore()}>
     <App/>
   </Provider>
 );
