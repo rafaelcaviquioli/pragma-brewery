@@ -1,8 +1,8 @@
-import './app.scss';
+import './index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import App from './app.component';
+import App from './components/app/index';
 import createStore from './create-store';
 
 const AppOnRedux = (

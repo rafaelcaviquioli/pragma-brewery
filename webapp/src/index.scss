@@ -1,0 +1,17 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+$backgroundColor: #efefef;
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #484848;
+  background-color: $backgroundColor;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  overflow: auto;
+  min-height: 100vh;
+}

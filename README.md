@@ -33,3 +33,8 @@ Now the app is running on http://localhost:3000
     $ NODE_ENV=test docker-compose run --rm webapp-e2e
 
 Can be passed args to codeceptjs adding a new env var to the container `-e CODECEPT_ARGS="...args"`
+
+
+## Building for production
+
+    $ NODE_ENV=production docker-compose run --rm webapp yarn build

@@ -1,6 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
   filename: '[name].[contenthash].css',
@@ -35,6 +36,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './public/index.ejs' }),
+    new CopyWebpackPlugin([
+      { from: 'public/favicon.png', to: 'favicon.png' },
+      { from: 'public/manifest.json', to: 'manifest.json' }
+    ]),
     extractSass
   ],
   devServer: {
