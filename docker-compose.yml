@@ -1,0 +1,25 @@
+version: '2'
+services:
+  webapp:
+    build: ./webapp
+    command: yarn start
+    volumes:
+      - ./webapp:/home/node
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=$NODE_ENV
+  webapp-e2e:
+    build: ./webapp-e2e
+    depends_on:
+      - selenium-server
+      - webapp
+    volumes:
+      - ./webapp-e2e:/tests
+    environment:
+      - NODE_ENV=$NODE_ENV
+  selenium-server:
+    image: selenium/standalone-chrome
+    ports:
+      - '4444:4444'
+      - '5900:5900'
