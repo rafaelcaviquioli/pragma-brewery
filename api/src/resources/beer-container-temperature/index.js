@@ -1,6 +1,6 @@
 const createRoute = require('./create.route');
 
-register.attributes = { name: 'beer-container' };
+register.attributes = { name: 'beer-container-temperature' };
 
 function register(server, options, next) {
   createRoute(server);

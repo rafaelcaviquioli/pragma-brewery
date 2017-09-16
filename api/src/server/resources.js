@@ -1,5 +1,5 @@
-const beerContainer = require('../resources/beer-container');
+const beerContainerTemperature = require('../resources/beer-container-temperature');
 
 module.exports = [
-  { register: beerContainer, options: {}, routes: { prefix: '/beer-containers' } },
+  { register: beerContainerTemperature, options: {}, routes: { prefix: '/beer-container-temperature' } },
 ];

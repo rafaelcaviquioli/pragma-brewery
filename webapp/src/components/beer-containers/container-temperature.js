@@ -8,9 +8,11 @@ class ContainerTemperature extends React.PureComponent {
 
     return (
       <Card className={styles.col}>
-        <h2>{container.name}</h2>
+        <h2>{container.beer}</h2>
         <hr/>
-        <h3>{container.temperature}°C</h3>
+        {container.temperature ?
+          <h3>{`${container.temperature}°C`}</h3> :
+          <h4>waiting thermometer</h4>}
         <small>{container.minTemperature}°C - {container.maxTemperature}°C</small>
       </Card>
     );
