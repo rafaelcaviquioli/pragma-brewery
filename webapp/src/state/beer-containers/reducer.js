@@ -12,23 +12,24 @@ const initialState = {
   ]
 };
 
-const updateContainerTemperature = (state, action) => {
-  const containers = state.containers
-    .map(container => {
-      if (container.beer === action.payload.beer) {
-        const temperature = action.payload.temperature;
-        const outOfRange = temperature < container.minTemperature || temperature > container.maxTemperature;
-        return { ...container, temperature: action.payload.temperature, outOfRange };
-      } else {
-        return container;
-      }
-    });
-
+const temperatureCreatedReducer = (state, action) => {
+  const containers = state.containers.map(updateTemperatureFor(action.payload));
   return { containers };
 };
 
+const updateTemperatureFor = ({ beer, temperature }) => {
+  return container => {
+    if (container.beer === beer) {
+      const outOfRange = temperature < container.minTemperature || temperature > container.maxTemperature;
+      return { ...container, temperature, outOfRange };
+    } else {
+      return container;
+    }
+  };
+};
+
 const reducers = {
-  [TEMPERATURE_CREATED]: updateContainerTemperature,
+  [TEMPERATURE_CREATED]: temperatureCreatedReducer,
 };
 
 export default handleActions(reducers, initialState);
