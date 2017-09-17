@@ -11,4 +11,4 @@ setInterval(() => {
       body: JSON.stringify({ beer, temperature })
     });
   }
-}, 5000);
+}, 10000);

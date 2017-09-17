@@ -1,10 +1,15 @@
 import React from 'react';
-import styles from './styles.scss';
+import { toast } from 'react-toastify';
 import Card from 'components/card';
+import styles from './styles.scss';
 
 class ContainerTemperature extends React.PureComponent {
   render() {
     const container = this.props;
+
+    if (container.outOfRange) {
+      toast.warn(`${container.beer} is out of temperature range!`);
+    }
 
     return (
       <Card className={`${styles.col} ${container.outOfRange && styles.outOfRange}`}>
