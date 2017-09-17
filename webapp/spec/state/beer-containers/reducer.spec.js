@@ -1,5 +1,5 @@
 import beerContainers from 'state/beer-containers/reducer';
-import { WS_BEER_CONTAINER_TEMPERATURE_CREATED } from 'state/ws-actions';
+import { WS_BEER_CONTAINER_TEMPERATURE_UPDATED } from 'state/ws-actions';
 
 describe('beerContainersReducer', () => {
   it('returns the initial state', () => {
@@ -18,7 +18,7 @@ describe('beerContainersReducer', () => {
     });
   });
 
-  describe(`#${WS_BEER_CONTAINER_TEMPERATURE_CREATED}`, () => {
+  describe(`#${WS_BEER_CONTAINER_TEMPERATURE_UPDATED}`, () => {
     it('updates container\'s temperature', () => {
       const state = {
         containers: [
@@ -26,7 +26,7 @@ describe('beerContainersReducer', () => {
         ]
       };
 
-      const action = { type: WS_BEER_CONTAINER_TEMPERATURE_CREATED, payload: { beer: 'Beer 1', temperature: 5 } };
+      const action = { type: WS_BEER_CONTAINER_TEMPERATURE_UPDATED, payload: { beer: 'Beer 1', temperature: 5 } };
 
       expect(beerContainers(state, action)).toEqual({
         containers: [
@@ -43,7 +43,7 @@ describe('beerContainersReducer', () => {
         ]
       };
 
-      const action = { type: WS_BEER_CONTAINER_TEMPERATURE_CREATED, payload: { beer: 'Beer 1', temperature: 5 } };
+      const action = { type: WS_BEER_CONTAINER_TEMPERATURE_UPDATED, payload: { beer: 'Beer 1', temperature: 5 } };
 
       expect(beerContainers(state, action)).toEqual({
         containers: [
@@ -62,12 +62,12 @@ describe('beerContainersReducer', () => {
         };
 
         const notOutOfRange = {
-          type: WS_BEER_CONTAINER_TEMPERATURE_CREATED,
+          type: WS_BEER_CONTAINER_TEMPERATURE_UPDATED,
           payload: { beer: 'Beer 1', temperature: 4 }
         };
 
         const outOfRange = {
-          type: WS_BEER_CONTAINER_TEMPERATURE_CREATED,
+          type: WS_BEER_CONTAINER_TEMPERATURE_UPDATED,
           payload: { beer: 'Beer 1', temperature: 3 }
         };
 
@@ -83,12 +83,12 @@ describe('beerContainersReducer', () => {
         };
 
         const notOutOfRange = {
-          type: WS_BEER_CONTAINER_TEMPERATURE_CREATED,
+          type: WS_BEER_CONTAINER_TEMPERATURE_UPDATED,
           payload: { beer: 'Beer 1', temperature: 6 }
         };
 
         const outOfRange = {
-          type: WS_BEER_CONTAINER_TEMPERATURE_CREATED,
+          type: WS_BEER_CONTAINER_TEMPERATURE_UPDATED,
           payload: { beer: 'Beer 1', temperature: 7 }
         };
 

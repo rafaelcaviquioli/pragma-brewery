@@ -45,7 +45,7 @@ Scenario('waiting for thermometers', I => {
 });
 
 Scenario('updating temperature', I => {
-  I.sendPostRequest('/beer-container-temperature', { beer: 'Beer 3', temperature: 7 });
+  I.sendPutRequest('/beer-container-temperature', { beer: 'Beer 3', temperature: 7 });
 
   I.dontSee('Beer 3 is out of temperature range!');
 
@@ -57,7 +57,7 @@ Scenario('updating temperature', I => {
 });
 
 Scenario('updating temperature to out of range', I => {
-  I.sendPostRequest('/beer-container-temperature', { beer: 'Beer 3', temperature: 8 });
+  I.sendPutRequest('/beer-container-temperature', { beer: 'Beer 3', temperature: 8 });
 
   I.waitForText('Beer 3 is out of temperature range!');
 

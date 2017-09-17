@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { WS_BEER_CONTAINER_TEMPERATURE_CREATED as TEMPERATURE_CREATED } from 'state/ws-actions';
+import { WS_BEER_CONTAINER_TEMPERATURE_UPDATED as TEMPERATURE_UPDATED } from 'state/ws-actions';
 
 const initialState = {
   containers: [
@@ -12,7 +12,7 @@ const initialState = {
   ]
 };
 
-const temperatureCreatedReducer = (state, action) => {
+const temperatureUpdatedReducer = (state, action) => {
   const containers = state.containers.map(updateTemperatureFor(action.payload));
   return { containers };
 };
@@ -29,7 +29,7 @@ const updateTemperatureFor = ({ beer, temperature }) => {
 };
 
 const reducers = {
-  [TEMPERATURE_CREATED]: temperatureCreatedReducer,
+  [TEMPERATURE_UPDATED]: temperatureUpdatedReducer,
 };
 
 export default handleActions(reducers, initialState);

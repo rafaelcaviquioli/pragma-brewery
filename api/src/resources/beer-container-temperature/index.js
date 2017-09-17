@@ -1,9 +1,9 @@
-const createRoute = require('./create.route');
+const updateRoute = require('./update.route');
 
 register.attributes = { name: 'beer-container-temperature' };
 
 function register(server, options, next) {
-  createRoute(server);
+  updateRoute(server);
   next();
 }
 

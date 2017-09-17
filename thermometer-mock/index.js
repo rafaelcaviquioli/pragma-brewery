@@ -7,7 +7,7 @@ setInterval(() => {
     const temperature = random(3, 8);
 
     fetch('http://api:9000/beer-container-temperature', {
-      method: 'POST',
+      method: 'PUT',
       body: JSON.stringify({ beer, temperature })
     });
   }

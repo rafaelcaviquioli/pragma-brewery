@@ -47,7 +47,9 @@ To debug
 
     $ docker-compose down
     $ docker-compose up selenium-server
+    $ # open new console
     $ vncviewer localhost:5900 # the password is `secret`
+    $ # open new console
     $ NODE_ENV=test docker-compose run --rm webapp-e2e
 
 Any codeceptjs arg can be passed as an env var to the container `-e CODECEPT_ARGS="...args"`

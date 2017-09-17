@@ -1,7 +1,7 @@
 const createServer = require('../../../src/server/create-server');
 const Nes = require('nes');
 
-const method = 'POST';
+const method = 'PUT';
 const url = '/beer-container-temperature';
 
 describe(`${method} ${url}`, () => {
@@ -38,7 +38,7 @@ describe(`${method} ${url}`, () => {
 
       expect(message).toEqual({
         payload: { beer: 'Beer 1', temperature: 5 },
-        type: 'BEER_CONTAINER_TEMPERATURE_CREATED'
+        type: 'BEER_CONTAINER_TEMPERATURE_UPDATED'
       });
 
       done();
