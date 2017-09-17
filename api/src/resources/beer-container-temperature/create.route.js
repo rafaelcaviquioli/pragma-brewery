@@ -7,7 +7,7 @@ module.exports = server => {
     config: { validate: { payload: payloadSchema } },
     handler: (request, reply) => {
       server.broadcast({ type: 'BEER_CONTAINER_TEMPERATURE_CREATED', payload: request.payload });
-      reply('OK');
+      reply({ message: 'OK' });
     }
   });
 };

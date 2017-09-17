@@ -3,6 +3,10 @@ exports.config = {
   timeout: 10000,
   output: './reports',
   helpers: {
+    REST: {
+      endpoint: "http://api:9000"
+    },
+
     WebDriverIO: {
       smartWait: 10000,
       waitForTimeout: 10000,

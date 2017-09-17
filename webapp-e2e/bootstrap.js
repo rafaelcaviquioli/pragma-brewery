@@ -1,7 +1,11 @@
 const fetch = require('node-fetch');
 
 module.exports = function (done) {
-  new Promise((resolve) => waitServer('http://webapp:3000', resolve))
+  Promise
+    .all([
+      new Promise((resolve) => waitServer('http://webapp:3000', resolve)),
+      new Promise((resolve) => waitServer('http://api:9000', resolve))
+    ])
     .then(() => done());
 };
 
