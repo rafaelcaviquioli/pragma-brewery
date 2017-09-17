@@ -7,7 +7,7 @@ class ContainerTemperature extends React.PureComponent {
     const container = this.props;
 
     return (
-      <Card className={styles.col}>
+      <Card className={`${styles.col} ${container.outOfRange && styles.outOfRange}`}>
         <h2>{container.beer}</h2>
         <hr/>
         {container.temperature ?
