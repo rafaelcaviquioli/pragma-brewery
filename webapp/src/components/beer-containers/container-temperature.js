@@ -17,7 +17,7 @@ class ContainerTemperature extends React.PureComponent {
     const container = this.props;
 
     const containerTemperature = container.temperature ?
-      <h3><Temperature temperature={container.temperature}/></h3> :
+      <h3><Temperature value={container.temperature}/></h3> :
       <h4>waiting thermometer</h4>;
 
     return (
@@ -26,7 +26,7 @@ class ContainerTemperature extends React.PureComponent {
         <hr/>
         {containerTemperature}
         <small>
-          <Temperature temperature={container.minTemperature}/> - <Temperature temperature={container.maxTemperature}/>
+          <Temperature value={container.minTemperature}/> - <Temperature value={container.maxTemperature}/>
         </small>
       </Card>
     );

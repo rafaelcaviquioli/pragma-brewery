@@ -1,12 +1,12 @@
 import React from 'react';
-import BeerTemperature from 'components/beer-containers';
+import BeerContainers from 'components/beer-containers';
 
 class Dashboard extends React.PureComponent {
   render() {
     return (
       <div>
         <div className="container">
-          <BeerTemperature/>
+          <BeerContainers/>
         </div>
       </div>
     );
