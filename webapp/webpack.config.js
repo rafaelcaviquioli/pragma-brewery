@@ -30,7 +30,6 @@ module.exports = {
             { loader: 'resolve-url-loader' },
             { loader: 'sass-loader', options: { includePaths: ['./src/styles'], sourceMap: true } }
           ],
-          // use style-loader in development
           fallback: 'style-loader'
         })
       },

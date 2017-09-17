@@ -1,13 +1,11 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~react-toastify/dist/ReactToastify.min.css';
 
-$backgroundColor: #efefef;
-
 body {
   margin: 0;
   padding: 0;
   color: #484848;
-  background-color: $backgroundColor;
+  background-color: #efefef;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
 }

@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
+    "babel-plugin-webpack-alias": "^2.1.2",
     "babel-preset-react-app": "^3.0.2",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.7",
