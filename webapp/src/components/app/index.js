@@ -7,7 +7,7 @@ class App extends React.PureComponent {
   render() {
     return (
       <div>
-        <ToastContainer hideProgressBar={true}/>
+        <ToastContainer hideProgressBar={true} position="bottom-right"/>
         <Navbar/>
         <Dashboard/>
       </div>
