@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 src/index.js",
     "start-dev": "nodemon src/index.js",
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "postinstall": "(yarn outdated || exit 0)"
   },
   "jest": {

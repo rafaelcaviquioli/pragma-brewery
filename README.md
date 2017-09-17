@@ -34,21 +34,35 @@ To emulate how it works with thermometers
 
 ### Run unit tests
 
-    $ NODE_ENV=test docker-compose run --rm webapp yarn test
+    $ docker-compose run --rm webapp yarn test
 
 ### Run acceptance tests
 
+Destroy all containers before to ensure that will run on test env
+
+    $ docker-compose down
     $ NODE_ENV=test docker-compose run --rm webapp-e2e
 
-Can be passed args to codeceptjs adding a new env var to the container `-e CODECEPT_ARGS="...args"`
+To debug
 
+    $ docker-compose down
+    $ docker-compose up selenium-server
+    $ vncviewer localhost:5900 # the password is `secret`
+    $ NODE_ENV=test docker-compose run --rm webapp-e2e
+
+Any codeceptjs arg can be passed as an env var to the container `-e CODECEPT_ARGS="...args"`
+
+    $ NODE_ENV=test docker-compose run --rm -e CODECEPT_ARGS="--steps --debug" webapp-e2e
 
 ### Building for production
 
+Destroy all containers before to ensure that will run on test env
+
+    $ docker-compose down
     $ NODE_ENV=production docker-compose run --rm webapp yarn build
 
 ## API
 
 ### Run unit tests
 
-    $ NODE_ENV=test docker-compose run --rm api yarn test
+    $ docker-compose run --rm api yarn test
