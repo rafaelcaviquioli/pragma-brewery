@@ -12,11 +12,7 @@ const initialState = {
   ]
 };
 
-const reducers = {
-  [TEMPERATURE_CREATED]: updateContainerTemperature,
-};
-
-function updateContainerTemperature(state, action) {
+const updateContainerTemperature = (state, action) => {
   const containers = state.containers
     .map(container => {
       if (container.beer === action.payload.beer) {
@@ -29,6 +25,10 @@ function updateContainerTemperature(state, action) {
     });
 
   return { containers };
-}
+};
+
+const reducers = {
+  [TEMPERATURE_CREATED]: updateContainerTemperature,
+};
 
 export default handleActions(reducers, initialState);
