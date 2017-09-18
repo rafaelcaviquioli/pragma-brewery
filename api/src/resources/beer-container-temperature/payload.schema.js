@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
 module.exports = {
-  beer: Joi.string().required(),
+  id: Joi.number().integer().required(),
   temperature: Joi.number().integer().required()
 };

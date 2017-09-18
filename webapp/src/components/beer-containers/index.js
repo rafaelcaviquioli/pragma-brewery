@@ -5,9 +5,9 @@ import ContainerTemperature from './container-temperature';
 
 class BeerContainers extends React.PureComponent {
   render() {
-    const ContainerList = this.props.containers.map((beer, index) =>
-      <div key={index} className='col-md-4'>
-        <ContainerTemperature {...beer}/>
+    const ContainerList = this.props.containers.map(container =>
+      <div key={container.id} className='col-md-4'>
+        <ContainerTemperature {...container}/>
       </div>
     );
 

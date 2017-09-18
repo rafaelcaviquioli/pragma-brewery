@@ -9,7 +9,7 @@ class ContainerTemperature extends React.PureComponent {
     const container = this.props;
 
     if (container.outOfRange) {
-      toast.warn(`${container.beer} is out of temperature range!`);
+      toast.warn(`${container.beer} on container ${container.id} is out of temperature range!`);
     }
   }
 
@@ -22,7 +22,7 @@ class ContainerTemperature extends React.PureComponent {
 
     return (
       <Card className={`${styles.col} ${container.outOfRange ? styles.outOfRange : ''}`}>
-        <h2>{container.beer}</h2>
+        <h2>{container.beer}</h2><small>container {container.id}</small>
         <hr/>
         {containerTemperature}
         <small>

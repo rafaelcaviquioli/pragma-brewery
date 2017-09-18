@@ -2,13 +2,12 @@ const fetch = require('node-fetch');
 const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 setInterval(() => {
-  for (let beerIndex = 1; beerIndex <= 6; beerIndex++) {
-    const beer = `Beer ${beerIndex}`;
+  for (let containerId = 1; containerId <= 6; containerId++) {
     const temperature = random(3, 8);
 
     fetch('http://api:9000/beer-container-temperature', {
       method: 'PUT',
-      body: JSON.stringify({ beer, temperature })
+      body: JSON.stringify({ id: containerId, temperature })
     });
   }
 }, 10000);

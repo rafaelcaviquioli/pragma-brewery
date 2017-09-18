@@ -8,8 +8,8 @@ import ContainerTemperature from 'components/beer-containers/container-temperatu
 describe('<BeerContainers />', () => {
   it('renders a container temperature for each container', () => {
     const containers = [
-      { beer: 'Beer 1', temperature: 5, minTemperature: 4, maxTemperature: 6, outOfRange: false },
-      { beer: 'Beer 2', temperature: 5, minTemperature: 4, maxTemperature: 6, outOfRange: false },
+      { id: 1, beer: 'Beer 1', temperature: 5, minTemperature: 4, maxTemperature: 6, outOfRange: false },
+      { id: 2, beer: 'Beer 2', temperature: 5, minTemperature: 4, maxTemperature: 6, outOfRange: false },
     ];
     const store = createStore({ beerContainers: { containers } });
 
@@ -23,7 +23,7 @@ describe('<BeerContainers />', () => {
   });
 
   it('pass the container to container temperature', () => {
-    const containers = [{ beer: 'Beer 1', temperature: 5, minTemperature: 4, maxTemperature: 6, outOfRange: false }];
+    const containers = [{ id: 1, beer: 'Beer 1', temperature: 5, minTemperature: 4, maxTemperature: 6, outOfRange: false }];
     const store = createStore({ beerContainers: { containers } });
 
     const wrapper = mount(
@@ -33,6 +33,7 @@ describe('<BeerContainers />', () => {
     );
 
     expect(wrapper.find(ContainerTemperature).props()).toEqual({
+      id: 1,
       beer: 'Beer 1',
       temperature: 5,
       minTemperature: 4,
